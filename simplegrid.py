@@ -27,6 +27,12 @@ class Grid:
     def select(self, x, y):
         self.selected_x = x
         self.selected_y = y
+    
+
+    def move(self, x, y):
+        self.selected_x += x
+        self.selected_y += y
+
 
 
 grid = Grid(3, 4, 0)
