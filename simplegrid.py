@@ -10,7 +10,9 @@ class Grid:
             for cell in range(x):
                 row.append(item)
             self.grid.append(row)
-
+        
+        self.selected_x = 0
+        self.selected_y = 0
 
     def __str__(self):
         grid_str = ""
@@ -21,6 +23,10 @@ class Grid:
             grid_str += row_str + "\n"
         return grid_str
 
+
+    def select(self, x, y):
+        self.selected_x = x
+        self.selected_y = y
 
 
 grid = Grid(3, 4, 0)
