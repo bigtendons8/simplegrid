@@ -1,22 +1,27 @@
-def create_grid(x, y, item):
-    grid = []
-    for i in range(y):
-        row = []
-        for cell in range(x):
-            row.append(item)
-        grid.append(row)
+class Grid:
+    def __init__(self, x, y, item):
+        self.x = x
+        self.y = y
+        self.item = item
 
-    return grid
-    
-
-def print_grid(grid):
-    for row in grid:
-        row_str = ""
-        for cell in row:
-            row_str += str(cell)
-        print(row_str)
+        self.grid = []
+        for i in range(y):
+            row = []
+            for cell in range(x):
+                row.append(item)
+            self.grid.append(row)
 
 
-grid = create_grid(3, 4, 0)
-print_grid(grid)
+    def __str__(self):
+        grid_str = ""
+        for row in self.grid:
+            row_str = ""
+            for cell in row:
+                row_str += str(cell)
+            grid_str += row_str + "\n"
+        return grid_str
 
+
+
+grid = Grid(3, 4, 0)
+print(grid)
