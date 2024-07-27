@@ -33,7 +33,12 @@ class Grid:
         self.selected_x += x
         self.selected_y += y
 
+    def change(self, x, y, item):
+        self.grid[y][x] = item
 
 
-grid = Grid(3, 4, 0)
+
+grid = Grid(3, 3, "■")
+print(grid)
+grid.change(2, 2, "o")
 print(grid)
