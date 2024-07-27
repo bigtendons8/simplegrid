@@ -36,9 +36,9 @@ class Grid:
     def change(self, x, y, item):
         self.grid[y][x] = item
 
+    
+    def change_here(self, item):
+        self.grid[self.selected_y][self.selected_x] = item
 
 
-grid = Grid(3, 3, "■")
-print(grid)
-grid.change(2, 2, "o")
-print(grid)
+
