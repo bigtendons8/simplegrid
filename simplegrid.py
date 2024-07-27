@@ -40,5 +40,12 @@ class Grid:
     def change_here(self, item):
         self.grid[self.selected_y][self.selected_x] = item
 
+    
+    def read(self, x, y):
+        return self.grid[y][x]
+
+
+    def read_here(self):
+        return self.grid[self.selected_y][self.selected_x]
 
 
