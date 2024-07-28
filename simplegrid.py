@@ -78,3 +78,7 @@ class Grid:
             for x in range(self.x):
                 self.grid[y][x] = self.item
 
+
+    def dimensions(self):
+        return self.x, self.y
+
