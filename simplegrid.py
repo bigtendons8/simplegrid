@@ -68,4 +68,8 @@ class Grid:
 
         return result
 
+    
+    def in_bounds(self, x, y):
+        return x <= self.x and y <= self.y
+
 
