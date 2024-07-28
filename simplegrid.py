@@ -55,3 +55,17 @@ class Grid:
         return self.grid[self.selected_y][self.selected_x]
 
 
+    def find(self, item):
+        result = []
+        y = 0
+        x = 0
+        for row in self.grid:
+            y += 1
+            for cell in row:
+                x += 1
+                if cell == item:
+                    result.append((x, y))
+
+        return result
+
+
