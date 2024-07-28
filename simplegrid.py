@@ -24,6 +24,12 @@ class Grid:
         return grid_str
 
 
+    def __iter__(self):
+        for row in self.grid:
+            for cell in row:
+                yield cell
+
+
     def select(self, x, y):
         self.selected_x = x
         self.selected_y = y
