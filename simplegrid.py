@@ -72,4 +72,9 @@ class Grid:
     def in_bounds(self, x, y):
         return x <= self.x and y <= self.y
 
+   
+    def reset(self):
+        for y in range(self.y):
+            for x in range(self.x):
+                self.grid[y][x] = self.item
 
