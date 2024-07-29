@@ -86,10 +86,16 @@ class Grid:
     def neighbors(self, x, y):
         neighbor_coords = [
             (x-1, y-1), (x, y-1), (x+1, y-1),
-            (x-1, y),           (x+1, y),
+            (x-1, y),               (x+1, y),
             (x-1, y+1), (x, y+1), (x+1, y+1)
         ]
         return [(nx, ny) for nx, ny in neighbor_coords if self.in_bounds(nx, ny)]
 
+
+    def neighbor_values(self, x, y):
+        result = []
+        for i in self.neighbors(x, y):
+            result.append(self.read(i[0], i[1]))
+        return result
 
 
