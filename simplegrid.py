@@ -82,3 +82,14 @@ class Grid:
     def dimensions(self):
         return self.x, self.y
 
+
+    def neighbors(self, x, y):
+        neighbor_coords = [
+            (x-1, y-1), (x, y-1), (x+1, y-1),
+            (x-1, y),           (x+1, y),
+            (x-1, y+1), (x, y+1), (x+1, y+1)
+        ]
+        return [(nx, ny) for nx, ny in neighbor_coords if self.in_bounds(nx, ny)]
+
+
+
