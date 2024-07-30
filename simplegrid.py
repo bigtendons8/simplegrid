@@ -30,6 +30,10 @@ class Grid:
                 yield cell
 
 
+    def in_bounds(self, x, y):
+        return x <= self.x and y <= self.y
+
+
     def select(self, x, y):
         self.selected_x = x
         self.selected_y = y
@@ -48,7 +52,8 @@ class Grid:
 
     
     def read(self, x, y):
-        return self.grid[y][x]
+        if in_bounds(x, y):
+            return self.grid[y][x]
 
 
     def read_here(self):
@@ -68,10 +73,6 @@ class Grid:
 
         return result
 
-    
-    def in_bounds(self, x, y):
-        return x <= self.x and y <= self.y
-
    
     def reset(self):
         for y in range(self.y):
@@ -86,7 +87,7 @@ class Grid:
     def neighbors(self, x, y):
         neighbor_coords = [
             (x-1, y-1), (x, y-1), (x+1, y-1),
-            (x-1, y),               (x+1, y),
+            (x-1, y),           (x+1, y),
             (x-1, y+1), (x, y+1), (x+1, y+1)
         ]
         return [(nx, ny) for nx, ny in neighbor_coords if self.in_bounds(nx, ny)]
