@@ -52,7 +52,7 @@ class Grid:
 
     
     def read(self, x, y):
-        if in_bounds(x, y):
+        if self.in_bounds(x, y):
             return self.grid[y][x]
 
 
